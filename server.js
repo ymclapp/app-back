@@ -28,7 +28,7 @@ db.sequelize.sync();
 
 //Application Setup
 
-
+//Routes
 
 app.get('/', (request, response) => {
     response.send({ message:  "You have reached the landing page!!!" });
@@ -39,6 +39,8 @@ response.status(404).send('This route does not exist');
 
 
 require('./app/routes/tutorial.routes')(app);
+require('./app/routes/auth.routes')(app);
+require('./app/routes/user.routes')(app);
 const PORT = process.env.PORT || 3000;
 if(!parseInt(PORT)) throw 'Invalid PORT';
 app.listen(PORT, () => 
