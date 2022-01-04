@@ -17,6 +17,7 @@ app.use(express.json());
 //app.use(express.static('./public'));
 const pg = require('pg');
 const db = require('./app/models');
+const Role = db.role;
 db.sequelize.sync();
 
 //db.sequelize.sync({ force: true }).then(() => {
@@ -44,4 +45,19 @@ app.listen(PORT, () =>
 {console.log(`App is listening on http://localhost:${PORT}`);
 });
 
-
+function initial() {
+    Role.create({
+      id: 1,
+      name: "user"
+    });
+   
+    Role.create({
+      id: 2,
+      name: "moderator"
+    });
+   
+    Role.create({
+      id: 3,
+      name: "admin"
+    });
+  }
