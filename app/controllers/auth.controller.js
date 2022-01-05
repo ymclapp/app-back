@@ -13,7 +13,7 @@ exports.signup = (request, response) => {
   User.create({
     username: request.body.username,
     email: request.body.email,
-    password: bcrypt.hashSync(req.body.password, 8),
+    password: bcrypt.hashSync(request.body.password, 8),
     first_name:  request.body.first_name,
     last_name:  request.body.last_name,
     active:  true

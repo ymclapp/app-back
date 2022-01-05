@@ -1,6 +1,6 @@
 const { user } = require("pg/lib/defaults");
 
-moddule.exports = (sequelize, Sequelize) => {
+module.exports = (sequelize, Sequelize) => {
 const User = sequelize.define("users", {
     email:  {
         type:  Sequelize.STRING
